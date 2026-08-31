@@ -1,0 +1,70 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #5c5c5c;
+  --line: #e2e2e2;
+  --accent: #2f6f4f;
+  --card: #f7f7f5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --fg: #e8e8e6;
+    --muted: #a0a0a0;
+    --line: #2c2f35;
+    --accent: #7fc4a0;
+    --card: #1c1f24;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
+    "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.85;
+  font-size: 16px;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+header { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 32px; }
+.brand { font-size: 15px; font-weight: 700; letter-spacing: .04em; color: var(--accent); text-decoration: none; }
+h1 { font-size: 26px; line-height: 1.4; margin: 12px 0 8px; }
+h2 {
+  font-size: 18px;
+  margin: 40px 0 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+h2:first-of-type { border-top: none; padding-top: 0; }
+h3 { font-size: 16px; margin: 24px 0 8px; }
+p, li { color: var(--fg); }
+ul, ol { padding-left: 1.4em; }
+li { margin-bottom: 6px; }
+.meta { color: var(--muted); font-size: 14px; margin: 0; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.card p:first-child { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+th { background: var(--card); font-weight: 600; }
+.table-scroll { overflow-x: auto; }
+a { color: var(--accent); }
+code {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 14px;
+}
+nav.pages { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; }
+nav.pages a { margin-right: 18px; }
+footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
