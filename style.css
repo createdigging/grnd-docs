@@ -65,6 +65,8 @@ code {
   padding: 1px 5px;
   font-size: 14px;
 }
+.lang { float: right; font-size: 14px; }
+.lang a { text-decoration: none; }
 nav.pages { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; }
 nav.pages a { margin-right: 18px; }
 footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
