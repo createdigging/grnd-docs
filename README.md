@@ -1,6 +1,9 @@
-# GRND — 法的文書
+# GRND — 紹介サイトと法的文書
 
-iOS アプリ **GRND 生活管理** のプライバシーポリシー・利用規約・サポートページ。
+iOS アプリ **GRND** の紹介ページ(`index.html` / `index.en.html`)と、プライバシーポリシー・利用規約・サポートページ。
+
+紹介ページ・`lp.css`・`img/`・`sitemap.xml` はここが正本(本体リポの `docs/` にはない)。
+日本語の文は claude-system の yomiyasu を通してから入れる。
 
 GitHub Pages で配信している。App Store Connect の Privacy Policy URL /
 Support URL、およびアプリ内(課金画面・プロフィール画面・ログイン画面)から参照される。
