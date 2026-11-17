@@ -109,3 +109,28 @@ footer p { margin: 6px 0; }
   .lead { font-size: 16px; }
 }
 .nw { display: inline-block; }
+
+/* articles */
+.article { max-width: 680px; margin: 0 auto; padding: 24px 0 64px; }
+.article h1 { font-size: clamp(26px, 5.4vw, 36px); line-height: 1.4; margin: 8px 0 12px; }
+.article .date { font-size: 13px; color: var(--mute); margin: 0 0 32px; }
+.article h2 { font-size: 22px; line-height: 1.45; margin: 48px 0 14px; padding-top: 24px; border-top: 1px solid var(--line); }
+.article h3 { font-size: 18px; margin: 28px 0 8px; }
+.article p, .article li { font-size: 17px; }
+.article li { margin-bottom: 8px; }
+.article .summary { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 24px; margin: 24px 0; }
+.article .summary p { margin: 0 0 8px; font-weight: 700; font-size: 15px; color: var(--ind); }
+.article .summary ol { margin: 0; padding-left: 1.3em; }
+.article .note { font-size: 14px; color: var(--mute); }
+.article .refs { font-size: 14px; color: var(--mute); padding-left: 1.3em; }
+.article .refs li { font-size: 14px; }
+.article .appbox { display: flex; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; padding: 20px; margin: 40px 0; }
+.article .appbox img { width: 56px; height: 56px; border-radius: 13px; flex: none; }
+.article .appbox p { margin: 0 0 6px; font-size: 15px; }
+.crumb { font-size: 13px; color: var(--mute); margin: 8px 0 0; }
+.crumb a { color: var(--mute); }
+.list-articles { list-style: none; padding: 0; }
+.list-articles li { border-top: 1px solid var(--line); padding: 20px 0; }
+.list-articles a { font-size: 19px; font-weight: 700; text-decoration: none; }
+.list-articles p { margin: 6px 0 0; color: var(--mute); font-size: 15px; }
