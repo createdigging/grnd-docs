@@ -155,7 +155,7 @@ footer p { margin: 6px 0; }
 /* intro */
 .intro { position: fixed; inset: 0; z-index: 100; animation: intro-hide 0s 1.8s forwards; }
 .intro-bg { position: absolute; inset: 0; background: var(--bg); animation: intro-fade .35s ease-out 1.4s forwards; }
-.intro-mark { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px;
+.intro-mark { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -82px 0 0 -48px;
   background: #5058e1; border-radius: 21px; overflow: hidden;
   animation: mark-in .22s ease-out both, mark-fly .5s cubic-bezier(.7, 0, .2, 1) 1.15s forwards; }
 .intro-mark svg { display: block; width: 100%; height: 100%; }
@@ -167,5 +167,19 @@ footer p { margin: 6px 0; }
 @keyframes mark-fly { to { transform: translate(var(--tx, 0), var(--ty, 0)) scale(var(--s, 1)); } }
 @keyframes intro-fade { to { opacity: 0; } }
 @keyframes intro-hide { to { visibility: hidden; } }
+.intro-chart { position: absolute; left: 50%; top: 50%; width: 168px; height: 48px; margin: 34px 0 0 -84px;
+  display: flex; align-items: flex-end; gap: 4px; border-bottom: 1px solid var(--line); animation: chart-out .25s ease-in 1.05s forwards; }
+.intro-chart span { flex: 1; display: flex; flex-direction: column-reverse; transform: scaleY(0); transform-origin: bottom;
+  animation: chart-up .4s cubic-bezier(.3, 0, .2, 1) forwards; }
+.intro-chart span:nth-child(1) { animation-delay: .20s; }
+.intro-chart span:nth-child(2) { animation-delay: .26s; }
+.intro-chart span:nth-child(3) { animation-delay: .32s; }
+.intro-chart span:nth-child(4) { animation-delay: .38s; }
+.intro-chart span:nth-child(5) { animation-delay: .44s; }
+.intro-chart span:nth-child(6) { animation-delay: .50s; }
+.intro-chart span:nth-child(7) { animation-delay: .56s; }
+.intro-chart i { display: block; }
+@keyframes chart-up { to { transform: none; } }
+@keyframes chart-out { to { opacity: 0; transform: translateY(8px); } }
 .no-intro .intro { display: none; }
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
