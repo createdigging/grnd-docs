@@ -10,15 +10,15 @@ Support URL、およびアプリ内(課金画面・プロフィール画面・�
 
 ## 日本語(正本)
 
-- プライバシーポリシー: https://createdigging.github.io/grnd-docs/privacy.html
-- 利用規約: https://createdigging.github.io/grnd-docs/terms.html
-- サポート: https://createdigging.github.io/grnd-docs/support.html
+- プライバシーポリシー: https://grnd.day/privacy.html
+- 利用規約: https://grnd.day/terms.html
+- サポート: https://grnd.day/support.html
 
 ## English(参考訳)
 
-- Privacy Policy: https://createdigging.github.io/grnd-docs/privacy.en.html
-- Terms of Use: https://createdigging.github.io/grnd-docs/terms.en.html
-- Support: https://createdigging.github.io/grnd-docs/support.en.html
+- Privacy Policy: https://grnd.day/privacy.en.html
+- Terms of Use: https://grnd.day/terms.en.html
+- Support: https://grnd.day/support.en.html
 
 **日本語版が正本**。英語版は参考訳で、その旨を各ページ冒頭に明記している。
 内容を変える時は日本語を直してから英語へ反映すること(逆はしない)。

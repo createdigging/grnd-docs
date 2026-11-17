@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grnd.day/sitemap.xml
