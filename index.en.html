@@ -23,6 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(sessionStorage.getItem("intro"))document.documentElement.className+=" no-intro";sessionStorage.setItem("intro","1")}catch(e){}function introFly(){var m=document.querySelector(".intro-mark"),l=document.querySelector(".logo img");if(!m||!l)return;var b=l.getBoundingClientRect();m.style.setProperty("--tx",(b.left+b.width/2-m.offsetLeft-48)+"px");m.style.setProperty("--ty",(b.top+b.height/2-m.offsetTop-48)+"px");m.style.setProperty("--s",b.width/96)}addEventListener("DOMContentLoaded",function(){setTimeout(introFly,1000)});addEventListener("load",introFly)</script>
+<script>if("IntersectionObserver"in window){document.documentElement.classList.add("io");addEventListener("DOMContentLoaded",function(){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");o.unobserve(e.target)}})},{threshold:.35});document.querySelectorAll(".fig").forEach(function(f){o.observe(f)})})}</script>
 <link rel="stylesheet" href="lp.css">
 <script type="application/ld+json">
 {
@@ -59,7 +60,12 @@
       <a class="cta" href="https://apps.apple.com/us/app/id6755229342">View on the App Store</a>
       <p class="cta-note">iOS app. Logging is free.</p>
     </div>
-    <div class="stage stage-hero" style="--c:var(--ind)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/us-shot-01-home.webp" alt="GRND home screen: a week of sleep, study and to-do logs, plus today&#39;s 3 lines" width="900" height="1955"></div></div></div>
+    <div class="fig fig-hero">
+      <div class="fig-head"><p class="fig-title">THIS WEEK</p><p class="fig-big mono">DAY 6<small> / 7</small></p></div>
+      <div class="cols7 grow-y"><div class="col"><i style="--c:var(--brown);height:32%"></i><i style="--c:var(--ind);height:18%"></i><i style="--c:var(--green);height:8%"></i></div><div class="col"><i style="--c:var(--brown);height:36%"></i><i style="--c:var(--ind);height:24%"></i><i style="--c:var(--green);height:10%"></i></div><div class="col"><i style="--c:var(--brown);height:28%"></i><i style="--c:var(--ind);height:16%"></i><i style="--c:var(--green);height:6%"></i></div><div class="col"><i style="--c:var(--brown);height:38%"></i><i style="--c:var(--ind);height:28%"></i><i style="--c:var(--green);height:12%"></i></div><div class="col"><i style="--c:var(--brown);height:34%"></i><i style="--c:var(--ind);height:22%"></i><i style="--c:var(--green);height:10%"></i></div><div class="col today"><i style="--c:var(--brown);height:42%"></i><i style="--c:var(--ind);height:32%"></i><i style="--c:var(--green);height:14%"></i></div><div class="col future"></div></div>
+      <div class="days7 mono"><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span class="on">Thu</span><span>Fri</span></div>
+      <div class="legend mono"><span style="--c:var(--brown)"><b>■</b> Sleep</span><span style="--c:var(--ind)"><b>■</b> Study</span><span style="--c:var(--green)"><b>■</b> To-do</span></div>
+    </div>
   </section>
 </div>
 
@@ -75,7 +81,11 @@
         <li><i style="--c:var(--green)"></i>Write one to-do</li>
       </ul>
     </div>
-    <div class="stage" style="--c:var(--green)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/us-shot-04-todos.webp" alt="To-do screen" width="900" height="1955" loading="lazy"></div></div></div>
+    <div class="fig">
+      <div class="fig-head"><p class="fig-title">Logged days</p></div>
+      <div class="dots mono pop"><span></span><span class="h">Sat</span><span class="h">Sun</span><span class="h">Mon</span><span class="h">Tue</span><span class="h">Wed</span><span class="h on">Thu</span><span class="h">Fri</span><span class="rl">Sleep</span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill on" style="--c:var(--brown)"></span><span class="cell fut" style="--c:var(--brown)"></span><span class="rl">Study</span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill on" style="--c:var(--ind)"></span><span class="cell fut" style="--c:var(--ind)"></span><span class="rl">To-do</span><span class="cell fill" style="--c:var(--green)"></span><span class="cell fill" style="--c:var(--green)"></span><span class="cell miss" style="--c:var(--green)"></span><span class="cell fill" style="--c:var(--green)"></span><span class="cell fill" style="--c:var(--green)"></span><span class="cell fill on" style="--c:var(--green)"></span><span class="cell fut" style="--c:var(--green)"></span></div>
+      <p class="illus">Illustration</p>
+    </div>
   </section>
 
   <section class="feat">
@@ -101,7 +111,11 @@
       <p>Stopwatch, timer, Pomodoro or manual entry, saved per subject.</p>
       <p>You can see what time you went to bed and how long you studied on the same screen.</p>
     </div>
-    <div class="stage" style="--c:var(--ind)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/us-shot-02-study.webp" alt="Study timer screen" width="900" height="1955" loading="lazy"></div></div></div>
+    <div class="fig">
+      <div class="fig-head"><p class="fig-title">LOG ─ sleep and study side by side</p></div>
+      <table class="logt mono"><thead><tr><th>Day</th><th>Sleep</th><th>Study</th></tr></thead><tbody><tr><td>Thu</td><td><span class="v c-sleep">7.3h</span><span class="b grow-x" style="--c:var(--brown);width:77%"></span></td><td><span class="v c-study">25m</span><span class="b grow-x" style="--c:var(--ind);width:31%"></span></td></tr><tr><td>Wed</td><td><span class="v c-sleep">7.3h</span><span class="b grow-x" style="--c:var(--brown);width:77%"></span></td><td><span class="v c-study">50m</span><span class="b grow-x" style="--c:var(--ind);width:62%"></span></td></tr><tr><td>Tue</td><td><span class="v c-sleep">7.2h</span><span class="b grow-x" style="--c:var(--brown);width:73%"></span></td><td><span class="v c-study">70m</span><span class="b grow-x" style="--c:var(--ind);width:88%"></span></td></tr><tr><td>Mon</td><td><span class="v c-sleep">7.2h</span><span class="b grow-x" style="--c:var(--brown);width:73%"></span></td><td><span class="v c-study">50m</span><span class="b grow-x" style="--c:var(--ind);width:62%"></span></td></tr><tr><td>Sun</td><td><span class="v c-sleep">6.8h</span><span class="b grow-x" style="--c:var(--brown);width:60%"></span></td><td><span class="v c-study">25m</span><span class="b grow-x" style="--c:var(--ind);width:31%"></span></td></tr><tr><td>Sat</td><td><span class="v c-sleep">7.5h</span><span class="b grow-x" style="--c:var(--brown);width:83%"></span></td><td><span class="v c-study">45m</span><span class="b grow-x" style="--c:var(--ind);width:56%"></span></td></tr></tbody></table>
+      <p class="illus">Illustration</p>
+    </div>
   </section>
 
   <section class="feat">
@@ -111,7 +125,12 @@
       <p>It&#39;s based on the average of your recent bedtimes.</p>
       <p>To log sleep, tap "I went to bed" at night and "I woke up" in the morning.</p>
     </div>
-    <div class="stage" style="--c:var(--brown)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/us-shot-03-sleep.webp" alt="Sleep log screen" width="900" height="1955" loading="lazy"></div></div></div>
+    <div class="fig">
+      <div class="fig-head"><p class="fig-title">Last 7 nights</p></div>
+      <div class="bands mono"><div class="rows7"><span class="rl">Sat</span><span class="track"><i class="grow-x" style="left:22.9%;width:45.8%"></i></span><span class="rl">Sun</span><span class="track"><i class="grow-x" style="left:19.8%;width:47.9%"></i></span><span class="rl">Mon</span><span class="track"><i class="grow-x" style="left:24.5%;width:46.4%"></i></span><span class="rl">Tue</span><span class="track"><i class="grow-x" style="left:21.4%;width:46.9%"></i></span><span class="rl">Wed</span><span class="track"><i class="grow-x" style="left:22.4%;width:46.9%"></i></span><span class="rl">Thu</span><span class="track"><i class="grow-x" style="left:20.3%;width:48.4%"></i></span><span class="rl on">Fri</span><span class="track"></span><span class="tgt" style="--x:21.9"><b>Tonight's target 23:30</b></span></div>
+      <div class="axis"><span></span><span class="ax"><span style="left:0.0%">20</span><span style="left:25.0%">0</span><span style="left:50.0%">4</span><span style="left:75.0%">8</span><span style="left:100.0%">12</span></span></div></div>
+      <p class="illus">Illustration</p>
+    </div>
   </section>
 </div>
 

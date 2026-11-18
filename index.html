@@ -23,6 +23,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(sessionStorage.getItem("intro"))document.documentElement.className+=" no-intro";sessionStorage.setItem("intro","1")}catch(e){}function introFly(){var m=document.querySelector(".intro-mark"),l=document.querySelector(".logo img");if(!m||!l)return;var b=l.getBoundingClientRect();m.style.setProperty("--tx",(b.left+b.width/2-m.offsetLeft-48)+"px");m.style.setProperty("--ty",(b.top+b.height/2-m.offsetTop-48)+"px");m.style.setProperty("--s",b.width/96)}addEventListener("DOMContentLoaded",function(){setTimeout(introFly,1000)});addEventListener("load",introFly)</script>
+<script>if("IntersectionObserver"in window){document.documentElement.classList.add("io");addEventListener("DOMContentLoaded",function(){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");o.unobserve(e.target)}})},{threshold:.35});document.querySelectorAll(".fig").forEach(function(f){o.observe(f)})})}</script>
 <link rel="stylesheet" href="lp.css">
 <script type="application/ld+json">
 {
@@ -59,7 +60,12 @@
       <a class="cta" href="https://apps.apple.com/jp/app/id6755229342">App Store で見る</a>
       <p class="cta-note">iOS アプリ。記録は無料です。</p>
     </div>
-    <div class="stage stage-hero" style="--c:var(--ind)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/jp-shot-01-home.webp" alt="GRND のホーム画面。1 週間の睡眠・学習・Todo の記録と、今日の 3 行" width="900" height="1955"></div></div></div>
+    <div class="fig fig-hero">
+      <div class="fig-head"><p class="fig-title">今週</p><p class="fig-big mono">DAY 6<small> / 7</small></p></div>
+      <div class="cols7 grow-y"><div class="col"><i style="--c:var(--brown);height:32%"></i><i style="--c:var(--ind);height:18%"></i><i style="--c:var(--green);height:8%"></i></div><div class="col"><i style="--c:var(--brown);height:36%"></i><i style="--c:var(--ind);height:24%"></i><i style="--c:var(--green);height:10%"></i></div><div class="col"><i style="--c:var(--brown);height:28%"></i><i style="--c:var(--ind);height:16%"></i><i style="--c:var(--green);height:6%"></i></div><div class="col"><i style="--c:var(--brown);height:38%"></i><i style="--c:var(--ind);height:28%"></i><i style="--c:var(--green);height:12%"></i></div><div class="col"><i style="--c:var(--brown);height:34%"></i><i style="--c:var(--ind);height:22%"></i><i style="--c:var(--green);height:10%"></i></div><div class="col today"><i style="--c:var(--brown);height:42%"></i><i style="--c:var(--ind);height:32%"></i><i style="--c:var(--green);height:14%"></i></div><div class="col future"></div></div>
+      <div class="days7 mono"><span>土</span><span>日</span><span>月</span><span>火</span><span>水</span><span class="on">木</span><span>金</span></div>
+      <div class="legend mono"><span style="--c:var(--brown)"><b>■</b> 睡眠</span><span style="--c:var(--ind)"><b>■</b> 学習</span><span style="--c:var(--green)"><b>■</b> Todo</span></div>
+    </div>
   </section>
 </div>
 
@@ -75,7 +81,11 @@
         <li><i style="--c:var(--green)"></i>Todo を 1 つ書く</li>
       </ul>
     </div>
-    <div class="stage" style="--c:var(--green)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/jp-shot-04-todos.webp" alt="Todo の画面" width="900" height="1955" loading="lazy"></div></div></div>
+    <div class="fig">
+      <div class="fig-head"><p class="fig-title">記録した日</p></div>
+      <div class="dots mono pop"><span></span><span class="h">土</span><span class="h">日</span><span class="h">月</span><span class="h">火</span><span class="h">水</span><span class="h on">木</span><span class="h">金</span><span class="rl">睡眠</span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill" style="--c:var(--brown)"></span><span class="cell fill on" style="--c:var(--brown)"></span><span class="cell fut" style="--c:var(--brown)"></span><span class="rl">学習</span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill" style="--c:var(--ind)"></span><span class="cell fill on" style="--c:var(--ind)"></span><span class="cell fut" style="--c:var(--ind)"></span><span class="rl">Todo</span><span class="cell fill" style="--c:var(--green)"></span><span class="cell fill" style="--c:var(--green)"></span><span class="cell miss" style="--c:var(--green)"></span><span class="cell fill" style="--c:var(--green)"></span><span class="cell fill" style="--c:var(--green)"></span><span class="cell fill on" style="--c:var(--green)"></span><span class="cell fut" style="--c:var(--green)"></span></div>
+      <p class="illus">図はイメージ</p>
+    </div>
   </section>
 
   <section class="feat">
@@ -101,7 +111,11 @@
       <p>ストップウォッチ・タイマー・ポモドーロ・手入力。教科ごとに残ります。</p>
       <p>昨日何時に寝たかと、今日どれだけ勉強したかを同じ画面で見られます。</p>
     </div>
-    <div class="stage" style="--c:var(--ind)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/jp-shot-02-study.webp" alt="学習タイマーの画面" width="900" height="1955" loading="lazy"></div></div></div>
+    <div class="fig">
+      <div class="fig-head"><p class="fig-title">LOG ─ 睡眠と学習を並べる</p></div>
+      <table class="logt mono"><thead><tr><th>曜日</th><th>睡眠</th><th>学習</th></tr></thead><tbody><tr><td>木</td><td><span class="v c-sleep">7.3h</span><span class="b grow-x" style="--c:var(--brown);width:77%"></span></td><td><span class="v c-study">25m</span><span class="b grow-x" style="--c:var(--ind);width:31%"></span></td></tr><tr><td>水</td><td><span class="v c-sleep">7.3h</span><span class="b grow-x" style="--c:var(--brown);width:77%"></span></td><td><span class="v c-study">50m</span><span class="b grow-x" style="--c:var(--ind);width:62%"></span></td></tr><tr><td>火</td><td><span class="v c-sleep">7.2h</span><span class="b grow-x" style="--c:var(--brown);width:73%"></span></td><td><span class="v c-study">70m</span><span class="b grow-x" style="--c:var(--ind);width:88%"></span></td></tr><tr><td>月</td><td><span class="v c-sleep">7.2h</span><span class="b grow-x" style="--c:var(--brown);width:73%"></span></td><td><span class="v c-study">50m</span><span class="b grow-x" style="--c:var(--ind);width:62%"></span></td></tr><tr><td>日</td><td><span class="v c-sleep">6.8h</span><span class="b grow-x" style="--c:var(--brown);width:60%"></span></td><td><span class="v c-study">25m</span><span class="b grow-x" style="--c:var(--ind);width:31%"></span></td></tr><tr><td>土</td><td><span class="v c-sleep">7.5h</span><span class="b grow-x" style="--c:var(--brown);width:83%"></span></td><td><span class="v c-study">45m</span><span class="b grow-x" style="--c:var(--ind);width:56%"></span></td></tr></tbody></table>
+      <p class="illus">図はイメージ</p>
+    </div>
   </section>
 
   <section class="feat">
@@ -111,7 +125,12 @@
       <p>目安は、直近の就寝時刻の平均から出します。</p>
       <p>睡眠の記録は、夜に「寝た」、朝に「起きた」を押すだけです。</p>
     </div>
-    <div class="stage" style="--c:var(--brown)"><div class="device"><div class="screen"><div class="sbar"><span>9:41</span><svg viewBox="0 0 64 12" aria-hidden="true"><rect x="0" y="7" width="3" height="5"/><rect x="5" y="5" width="3" height="7"/><rect x="10" y="2.5" width="3" height="9.5"/><rect x="15" y="0" width="3" height="12"/><rect x="38" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="40" y="2.5" width="18" height="7" rx="1.5"/><rect x="61" y="4" width="1.5" height="4" opacity=".4"/></svg></div><img src="img/jp-shot-03-sleep.webp" alt="睡眠の記録画面" width="900" height="1955" loading="lazy"></div></div></div>
+    <div class="fig">
+      <div class="fig-head"><p class="fig-title">直近 7 晩</p></div>
+      <div class="bands mono"><div class="rows7"><span class="rl">土</span><span class="track"><i class="grow-x" style="left:22.9%;width:45.8%"></i></span><span class="rl">日</span><span class="track"><i class="grow-x" style="left:19.8%;width:47.9%"></i></span><span class="rl">月</span><span class="track"><i class="grow-x" style="left:24.5%;width:46.4%"></i></span><span class="rl">火</span><span class="track"><i class="grow-x" style="left:21.4%;width:46.9%"></i></span><span class="rl">水</span><span class="track"><i class="grow-x" style="left:22.4%;width:46.9%"></i></span><span class="rl">木</span><span class="track"><i class="grow-x" style="left:20.3%;width:48.4%"></i></span><span class="rl on">金</span><span class="track"></span><span class="tgt" style="--x:21.9"><b>今夜の目安 23:30</b></span></div>
+      <div class="axis"><span></span><span class="ax"><span style="left:0.0%">20</span><span style="left:25.0%">0</span><span style="left:50.0%">4</span><span style="left:75.0%">8</span><span style="left:100.0%">12</span></span></div></div>
+      <p class="illus">図はイメージ</p>
+    </div>
   </section>
 </div>
 
