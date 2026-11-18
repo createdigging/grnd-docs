@@ -58,10 +58,7 @@ jobs:
       - name: Scroll and capture (ja / en)
         run: |
           UDID="${{ steps.sim.outputs.udid }}"
-          cap() {  # $1 = 名前, $2 = 枚数
-            for i in $(seq -w 1 $2); do
-              xcrun simctl io "$UDID" screenshot "out/$1-$i.png"
-              maestro --device "$UDID" test /dev/stdin <<'FLOW' >/dev/null || true
+          cat > "$RUNNER_TEMP/scroll.yaml" <<'FLOW'
           appId: com.apple.mobilesafari
           ---
           - swipe:
@@ -71,6 +68,10 @@ jobs:
           - waitForAnimationToEnd:
               timeout: 2000
           FLOW
+          cap() {  # $1 = 名前, $2 = 枚数
+            for i in $(seq -w 1 $2); do
+              xcrun simctl io "$UDID" screenshot "out/$1-$i.png"
+              maestro --device "$UDID" test "$RUNNER_TEMP/scroll.yaml" > /dev/null || echo "swipe failed at $1-$i"
             done
           }
           cap ja 12
