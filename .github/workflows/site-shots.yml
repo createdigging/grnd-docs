@@ -1,0 +1,89 @@
+# サイト(grnd.day)を iOS シミュレーターの Safari で撮る。
+# 公開リポなので macOS ランナーも無料。手動実行のみ(desk から API で起動する)。
+name: Site shots (iOS Simulator)
+
+on:
+  workflow_dispatch:
+    inputs:
+      device:
+        description: 'Simulator device'
+        required: false
+        default: 'iPhone 16 Pro'
+        type: string
+
+jobs:
+  shots:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - name: Boot simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available | grep "${{ inputs.device }} (" | head -1 | grep -oE "[0-9A-F-]{36}")
+          echo "udid=$UDID" >> $GITHUB_OUTPUT
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl spawn "$UDID" defaults write -g AppleLanguages -array ja
+          xcrun simctl spawn "$UDID" defaults write -g AppleLocale -string ja_JP
+          xcrun simctl status_bar "$UDID" override --time 9:41 --dataNetwork wifi --wifiBars 3 --cellularBars 4 --batteryState charged --batteryLevel 100
+          xcrun simctl ui "$UDID" appearance light
+
+      - name: Install maestro
+        run: |
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> $GITHUB_PATH
+
+      # Safari を 1 回開いて閉じ、初回の案内を先に済ませる
+      - name: Warm up Safari
+        run: |
+          UDID="${{ steps.sim.outputs.udid }}"
+          xcrun simctl openurl "$UDID" "https://example.com/"
+          sleep 12
+          mkdir -p out
+          xcrun simctl io "$UDID" screenshot out/00-warmup.png
+          xcrun simctl terminate "$UDID" com.apple.mobilesafari || true
+          sleep 2
+
+      - name: Record intro (ja)
+        run: |
+          UDID="${{ steps.sim.outputs.udid }}"
+          xcrun simctl io "$UDID" recordVideo --codec h264 --force out/intro-ja.mp4 &
+          REC=$!
+          sleep 2
+          xcrun simctl openurl "$UDID" "https://grnd.day/"
+          sleep 9
+          kill -INT $REC
+          wait $REC || true
+
+      - name: Scroll and capture (ja / en)
+        run: |
+          UDID="${{ steps.sim.outputs.udid }}"
+          cap() {  # $1 = 名前, $2 = 枚数
+            for i in $(seq -w 1 $2); do
+              xcrun simctl io "$UDID" screenshot "out/$1-$i.png"
+              maestro --device "$UDID" test /dev/stdin <<'FLOW' >/dev/null || true
+          appId: com.apple.mobilesafari
+          ---
+          - swipe:
+              start: 50%, 78%
+              end: 50%, 28%
+              duration: 600
+          - waitForAnimationToEnd:
+              timeout: 2000
+          FLOW
+            done
+          }
+          cap ja 12
+          xcrun simctl openurl "$UDID" "https://grnd.day/index.en.html"
+          sleep 8
+          cap en 3
+          xcrun simctl openurl "$UDID" "https://grnd.day/articles/chuya-gyakuten.html"
+          sleep 8
+          cap article 2
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-shots
+          path: out/
+          if-no-files-found: error
